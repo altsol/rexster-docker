@@ -13,6 +13,10 @@ RUN unzip rexster-server-2.6.0.zip
 RUN rm rexster-server-2.6.0.zip
 RUN mv rexster-server-2.6.0 rexster-server
 
+# install rexster config file
+COPY rexster.tpl.xml /rexster-server/config/
+
+# install rexster service
 RUN mkdir /etc/service/rexster
 ADD rexster.sh /etc/service/rexster/run
 
