@@ -10,3 +10,6 @@ build:
 
 tag_latest:
 	docker tag -f $(NAME):$(VERSION) $(NAME):latest
+
+test:
+	env NAME=$(NAME) VERSION=$(VERSION) ./test.sh
